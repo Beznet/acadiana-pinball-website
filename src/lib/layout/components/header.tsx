@@ -1,6 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react';
-
-import { ColorModeButton } from '@/components/ui/color-mode';
+import { Box, Flex, Link } from '@chakra-ui/react';
 
 export const Header = () => {
   return (
@@ -13,7 +11,16 @@ export const Header = () => {
       gridGap={2}
     >
       <Box marginLeft="auto">
-        <ColorModeButton />
+        <Box mr={4}>
+          <Link href="/" _hover={{ textDecoration: 'none' }}>
+            Home
+          </Link>
+        </Box>
+        <Box>
+          <Link href="/about" _hover={{ textDecoration: 'none' }}>
+            About
+          </Link>
+        </Box>
       </Box>
     </Flex>
   );
