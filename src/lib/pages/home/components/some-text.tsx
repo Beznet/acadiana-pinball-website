@@ -4,11 +4,9 @@ export const SomeText = () => {
   return (
     <Grid textAlign="center" gap={2}>
       <Heading size="2xl" fontWeight="extrabold">
-        vite-react-chakra-starter
+        Acadiana Pinball
       </Heading>
-      <Text textStyle="sm">
-        This is a vite react template with Chakra-UI and TypeScript setup.
-      </Text>
+      <Text textStyle="sm">coming soon...</Text>
     </Grid>
   );
 };

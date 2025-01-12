@@ -1,8 +1,8 @@
 {
-  "name": "vite-react-chakra-starter",
+  "name": "Acadiana Pinball Website",
   "version": "0.1.0",
   "private": true,
-  "author": "agustinusnathaniel",
+  "author": "beznet",
   "type": "module",
   "engines": {
     "node": ">=22.11.x",

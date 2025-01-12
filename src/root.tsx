@@ -15,18 +15,14 @@ import type { Route } from './+types/root';
 // fonts
 import '@fontsource-variable/plus-jakarta-sans';
 
-export function Layout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>vite-react-chakra-starter</title>
+        <title>Acadiana Pinball</title>
         <Meta />
         <Links />
       </head>

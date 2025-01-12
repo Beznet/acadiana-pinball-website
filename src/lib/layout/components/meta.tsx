@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-const APP_NAME = 'vite-react-chakra-starter';
+const APP_NAME = 'acadiana-pinball';
 
 export const Meta = () => {
   return (

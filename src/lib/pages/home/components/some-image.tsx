@@ -11,24 +11,6 @@ export const SomeImage = () => {
         height={ICON_SIZE}
         width={ICON_SIZE}
       />
-      <Image
-        src="/assets/react-icon.svg"
-        title="react"
-        height={ICON_SIZE}
-        width={ICON_SIZE}
-      />
-      <Image
-        src="/assets/chakra-ui-logomark-colored.svg"
-        title="Chakra UI"
-        height={ICON_SIZE}
-        width={ICON_SIZE}
-      />
-      <Image
-        src="/assets/ts-logo-512.svg"
-        title="TypeScript"
-        height={ICON_SIZE}
-        width={ICON_SIZE}
-      />
     </Flex>
   );
 };
