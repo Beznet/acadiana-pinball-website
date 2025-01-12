@@ -21,6 +21,24 @@ export const Header = () => {
       </Box>
       <Box>
         <Link
+          href="/new-players"
+          colorPalette={'cyan'}
+          _hover={{ textDecoration: 'underline' }}
+        >
+          New Players Guide
+        </Link>
+      </Box>
+      <Box>
+        <Link
+          href="/resources"
+          colorPalette={'cyan'}
+          _hover={{ textDecoration: 'underline' }}
+        >
+          Resources
+        </Link>
+      </Box>
+      <Box>
+        <Link
           href="/about"
           colorPalette={'cyan'}
           _hover={{ textDecoration: 'underline' }}
