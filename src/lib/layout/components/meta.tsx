@@ -5,8 +5,8 @@ const APP_NAME = 'acadiana-pinball';
 export const Meta = () => {
   return (
     <Helmet>
-      <title>Vite React Chakra Starter</title>
-      <meta name="description" content="Vite React Chakra Starter Template" />
+      <title>Acadiana Pinball</title>
+      <meta name="description" content="Acadiana Pinball Players" />
 
       <meta name="application-name" content={APP_NAME} />
       <meta name="apple-mobile-web-app-capable" content="yes" />

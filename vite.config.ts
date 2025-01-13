@@ -12,7 +12,7 @@ const pwaOptions: Partial<VitePWAOptions> = {
   registerType: 'autoUpdate',
   manifest: {
     short_name: 'acadiana-pinball',
-    name: 'Vite React App Template',
+    name: 'Acadiana Pinball',
     lang: 'en',
     start_url: '/',
     background_color: '#FFFFFF',

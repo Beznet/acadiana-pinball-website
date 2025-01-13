@@ -1,33 +1,63 @@
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Link, List, Text } from '@chakra-ui/react';
+import { Helmet } from 'react-helmet-async';
 
 function About() {
   return (
     <Box p={8}>
+      <Helmet>
+        <title>About | Acadiana Pinball Players</title>
+        <meta
+          name="description"
+          content="Learn about Acadiana Pinball Players, a vibrant community in Louisiana dedicated to pinball tournaments, leagues, and casual play."
+        />
+      </Helmet>
       <Heading>About Acadiana Pinball Players</Heading>
-      <Text mt={4}>
-        Welcome to Acadiana Pinball Players—the hub for all things pinball in
+      <Text my={4}>
+        Welcome to Acadiana Pinball Players! The place for all things pinball in
         the heart of Louisiana! We’re a community of pinball enthusiasts
         dedicated to celebrating the game and growing the competitive pinball
         scene in the Acadiana area. Whether you're a casual player or a seasoned
-        competitor, our goal is to foster a welcoming environment where players
-        can connect, improve their skills, and compete in exciting tournaments.
-        <h3>Our Mission</h3>
-        Promote a love for pinball through casual meetups and league play. Host
-        competitive tournaments that challenge players and bring the community
-        together. Support the global pinball community by aligning with
-        organizations like the International Flipper Pinball Association (IFPA)
-        to offer sanctioned events.
-        <h3>What We Offer</h3>
-        Monthly and Seasonal Tournaments – Compete in IFPA-sanctioned events and
-        climb the global rankings. Casual Meetups and Free Play Nights – Enjoy
-        laid-back games and connect with other pinball fans. Player Rankings and
-        Stats – Track your progress and see how you stack up against other
-        players. Special Events and Charity Tournaments – Play for a cause and
-        help us give back to the community.
-        <h3>🎉 Join the Fun!</h3>
-        Ready to play? Join us at our next event and become part of the Acadiana
-        pinball movement. Follow us for updates on tournaments, meetups, and
-        more!
+        flipper, our goal is to foster a welcoming environment where players can
+        connect, improve their skills, and compete in tournaments.
+      </Text>
+
+      <Text mb={4}>
+        <Heading size="md">Our Mission</Heading>
+        Promote a love for pinball through casual meetups and league play. We
+        host competitive tournaments that challenge players and bring the
+        Acadiana pinball community together. We also support the global pinball
+        community by aligning with the International Flipper Pinball Association
+        (IFPA) to offer sanctioned events.
+      </Text>
+
+      <Text mb={4}>
+        <Heading size="md">Tournaments and More!</Heading>
+        <List.Root>
+          <List.Item>
+            Monthly and Seasonal Tournaments: Compete in IFPA-sanctioned events
+            and climb the global rankings.
+          </List.Item>
+          <List.Item>
+            Casual Meetups and Free Play Nights – Enjoy laid-back games and
+            connect with other pinheads.
+          </List.Item>
+          <List.Item>
+            Player Rankings and Stats – Track your progress and see how you
+            stack up against other players
+          </List.Item>
+        </List.Root>
+      </Text>
+
+      <Text>
+        <Heading size="md">Join the Fun! 🎉 </Heading>
+        Ready to play? Join us at our next event or connect with others on our{' '}
+        <Link
+          variant="underline"
+          href="https://www.facebook.com/groups/1121754879359249"
+        >
+          Facebook Page
+        </Link>
+        . Follow us for updates on tournaments, meetups, and more!
       </Text>
     </Box>
   );

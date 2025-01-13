@@ -1,12 +1,9 @@
-import { Grid, Heading, Text } from '@chakra-ui/react';
+import { Grid, Text } from '@chakra-ui/react';
 
 export const SomeText = () => {
   return (
     <Grid textAlign="center" gap={2}>
-      <Heading size="2xl" fontWeight="extrabold">
-        Acadiana Pinball
-      </Heading>
-      <Text textStyle="sm">coming soon...</Text>
+      <Text textStyle="md">coming soon...</Text>
     </Grid>
   );
 };

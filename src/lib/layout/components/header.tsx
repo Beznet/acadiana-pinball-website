@@ -1,51 +1,37 @@
-import { Box, Flex, Link } from '@chakra-ui/react';
+import { Flex, HStack, Heading, Image, Link } from '@chakra-ui/react';
 
 export const Header = () => {
   return (
-    <Flex
-      as="header"
-      width="full"
-      align="center"
-      alignSelf="flex-start"
-      justifyContent="center"
-      gridGap={2}
-    >
-      <Box mr={4}>
-        <Link
-          href="/"
-          colorPalette={'cyan'}
-          _hover={{ textDecoration: 'underline' }}
-        >
+    <Flex as="header" width="full" align="center" direction="column" rowGap={4}>
+      <HStack>
+        <Image
+          src="/assets/pinball-game.svg"
+          alt="Acadiana Pinball Players Logo"
+          boxSize="50px"
+        />
+        <Heading size="3xl">Acadiana Pinball Players</Heading>
+        <Image
+          src="/assets/pinball-game.svg"
+          alt="Acadiana Pinball Players Logo"
+          boxSize="50px"
+          transform="scaleX(-1)"
+        />
+      </HStack>
+
+      <Flex gap={6}>
+        <Link href="/" _hover={{ textDecoration: 'underline' }}>
           Home
         </Link>
-      </Box>
-      <Box>
-        <Link
-          href="/new-players"
-          colorPalette={'cyan'}
-          _hover={{ textDecoration: 'underline' }}
-        >
+        <Link href="/new-players" _hover={{ textDecoration: 'underline' }}>
           New Players Guide
         </Link>
-      </Box>
-      <Box>
-        <Link
-          href="/resources"
-          colorPalette={'cyan'}
-          _hover={{ textDecoration: 'underline' }}
-        >
+        <Link href="/resources" _hover={{ textDecoration: 'underline' }}>
           Resources
         </Link>
-      </Box>
-      <Box>
-        <Link
-          href="/about"
-          colorPalette={'cyan'}
-          _hover={{ textDecoration: 'underline' }}
-        >
+        <Link href="/about" _hover={{ textDecoration: 'underline' }}>
           About
         </Link>
-      </Box>
+      </Flex>
     </Flex>
   );
 };
