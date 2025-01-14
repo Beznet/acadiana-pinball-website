@@ -10,6 +10,7 @@ import {
 
 import { Provider } from '@/components/ui/provider';
 import { Layout as AppLayout } from '@/lib/layout';
+import { Global } from '@emotion/react';
 import type { Route } from './+types/root';
 
 // fonts
@@ -27,6 +28,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <Global
+          styles={{
+            body: {
+              backgroundColor: '#f4a261',
+            },
+          }}
+        />
         <HelmetProvider>
           <Provider>
             <AppLayout>{children}</AppLayout>

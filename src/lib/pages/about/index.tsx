@@ -11,7 +11,9 @@ function About() {
           content="Learn about Acadiana Pinball Players, a vibrant community in Louisiana dedicated to pinball tournaments, leagues, and casual play."
         />
       </Helmet>
-      <Heading>About Acadiana Pinball Players</Heading>
+      <Heading size="2xl" textAlign="center">
+        About Acadiana Pinball Players
+      </Heading>
       <Text my={4}>
         Welcome to Acadiana Pinball Players! The place for all things pinball in
         the heart of Louisiana! We’re a community of pinball enthusiasts
@@ -21,8 +23,8 @@ function About() {
         connect, improve their skills, and compete in tournaments.
       </Text>
 
+      <Heading size="md">Our Mission</Heading>
       <Text mb={4}>
-        <Heading size="md">Our Mission</Heading>
         Promote a love for pinball through casual meetups and league play. We
         host competitive tournaments that challenge players and bring the
         Acadiana pinball community together. We also support the global pinball
@@ -30,8 +32,8 @@ function About() {
         (IFPA) to offer sanctioned events.
       </Text>
 
+      <Heading size="md">Tournaments and More!</Heading>
       <Text mb={4}>
-        <Heading size="md">Tournaments and More!</Heading>
         <List.Root>
           <List.Item>
             Monthly and Seasonal Tournaments: Compete in IFPA-sanctioned events
@@ -48,8 +50,8 @@ function About() {
         </List.Root>
       </Text>
 
+      <Heading size="md">Join the Fun! 🎉 </Heading>
       <Text>
-        <Heading size="md">Join the Fun! 🎉 </Heading>
         Ready to play? Join us at our next event or connect with others on our{' '}
         <Link
           variant="underline"

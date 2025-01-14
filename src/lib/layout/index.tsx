@@ -11,24 +11,42 @@ type LayoutProps = {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <Box margin="0 auto" maxWidth="80%" transition="0.5s ease-out">
-      <Meta />
-      <Flex wrap="wrap" margin="8">
-        <Box
-          width="100%"
-          pb={4}
-          bg="white"
-          borderBottom="2px solid"
-          borderColor="gray.200"
-          zIndex="10"
-        >
-          <Header />
-        </Box>
-        <Box width="full" as="main" marginY={22} minHeight="70vh">
-          {children}
-        </Box>
-        <Footer />
-      </Flex>
-    </Box>
+    <Flex
+      direction="column" // ✅
+      minHeight="100vh" // ✅
+    >
+      {/* Header */}
+      <Box
+        width="80%"
+        pb={4}
+        bg="white"
+        margin="0 auto"
+        borderBottom="2px solid"
+        borderColor="gray.200"
+        zIndex="10"
+        pt="4"
+      >
+        <Meta />
+        <Header />
+      </Box>
+
+      {/* Main Content */}
+      <Box
+        as="main"
+        flex="1" // ✅ Expands to fill available space
+        width="full"
+        marginY={22}
+        maxWidth="80%"
+        margin="0 auto"
+        pt="8"
+        transition="0.5s ease-out"
+        bgColor="white"
+      >
+        {children}
+      </Box>
+
+      {/* Sticky Footer */}
+      <Footer />
+    </Flex>
   );
 };
