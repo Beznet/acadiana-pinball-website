@@ -1,10 +1,35 @@
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Link, Stack, Text } from '@chakra-ui/react';
+import { LuExternalLink } from 'react-icons/lu';
 
 function Resources() {
   return (
     <Box p={8}>
-      <Heading>Pinball Resources</Heading>
-      <Text mt={4}>stuff goes here</Text>
+      <Heading size="2xl" textAlign="center">
+        Pinball Resources
+      </Heading>
+      <Text fontSize="xl">
+        <Stack>
+          <Link variant="underline" href="https://pinballmap.com/">
+            Pinball Map
+            <LuExternalLink />
+          </Link>
+          <Link variant="underline" href="https://pinballvideos.com/">
+            Pinball Videos and Tutorials
+            <LuExternalLink />
+          </Link>
+          <Link
+            variant="underline"
+            href="https://rules.silverballmania.com/home/"
+          >
+            Bob's Guide to Classic Pinball Machines
+            <LuExternalLink />
+          </Link>
+          <Link variant="underline" href="https://www.ifpapinball.com/">
+            International Flipper Pinball Association (IFPA)
+            <LuExternalLink />
+          </Link>
+        </Stack>
+      </Text>
     </Box>
   );
 }

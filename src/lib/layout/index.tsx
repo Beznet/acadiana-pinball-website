@@ -11,15 +11,38 @@ type LayoutProps = {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <Box margin="0 auto" maxWidth={800} transition="0.5s ease-out">
-      <Meta />
-      <Flex wrap="wrap" margin="8" minHeight="90vh">
+    <Flex direction="column" minHeight="100vh">
+      <Box
+        width="80%"
+        pb={4}
+        bg="white"
+        boxShadow={'md'}
+        margin="0 auto"
+        borderBottom="2px solid"
+        borderColor="gray.200"
+        zIndex="10"
+        pt="4"
+      >
+        <Meta />
         <Header />
-        <Box width="full" as="main" marginY={22}>
-          {children}
-        </Box>
-        <Footer />
-      </Flex>
-    </Box>
+      </Box>
+
+      <Box
+        as="main"
+        flex="1"
+        width="full"
+        marginY={22}
+        maxWidth="80%"
+        margin="0 auto"
+        pt="8"
+        transition="0.5s ease-out"
+        bgColor="white"
+        boxShadow="md"
+      >
+        {children}
+      </Box>
+
+      <Footer />
+    </Flex>
   );
 };
