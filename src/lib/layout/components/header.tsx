@@ -4,7 +4,10 @@ export const Header = () => {
   return (
     <Flex as="header" width="full" align="center" direction="column" rowGap={4}>
       <HStack>
-        <Heading size="3xl" fontFamily="'Press Start 2P', sans-serif">
+        <Heading
+          fontSize={['sm', 'md', 'xl', '3xl']}
+          fontFamily="'Press Start 2P', sans-serif"
+        >
           Acadiana Pinball Players
         </Heading>
       </HStack>
