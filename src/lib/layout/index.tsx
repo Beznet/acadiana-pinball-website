@@ -11,15 +11,12 @@ type LayoutProps = {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <Flex
-      direction="column" // ✅
-      minHeight="100vh" // ✅
-    >
-      {/* Header */}
+    <Flex direction="column" minHeight="100vh">
       <Box
         width="80%"
         pb={4}
         bg="white"
+        boxShadow={'md'}
         margin="0 auto"
         borderBottom="2px solid"
         borderColor="gray.200"
@@ -30,10 +27,9 @@ export const Layout = ({ children }: LayoutProps) => {
         <Header />
       </Box>
 
-      {/* Main Content */}
       <Box
         as="main"
-        flex="1" // ✅ Expands to fill available space
+        flex="1"
         width="full"
         marginY={22}
         maxWidth="80%"
@@ -41,11 +37,11 @@ export const Layout = ({ children }: LayoutProps) => {
         pt="8"
         transition="0.5s ease-out"
         bgColor="white"
+        boxShadow="md"
       >
         {children}
       </Box>
 
-      {/* Sticky Footer */}
       <Footer />
     </Flex>
   );
