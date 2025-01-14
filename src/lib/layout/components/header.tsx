@@ -1,21 +1,12 @@
-import { Flex, HStack, Heading, Image, Link } from '@chakra-ui/react';
+import { Flex, HStack, Heading, Link } from '@chakra-ui/react';
 
 export const Header = () => {
   return (
     <Flex as="header" width="full" align="center" direction="column" rowGap={4}>
       <HStack>
-        <Image
-          src="/assets/pinball-game.svg"
-          alt="Acadiana Pinball Players Logo"
-          boxSize="50px"
-        />
-        <Heading size="3xl">Acadiana Pinball Players</Heading>
-        <Image
-          src="/assets/pinball-game.svg"
-          alt="Acadiana Pinball Players Logo"
-          boxSize="50px"
-          transform="scaleX(-1)"
-        />
+        <Heading size="3xl" fontFamily="'Press Start 2P', sans-serif">
+          Acadiana Pinball Players
+        </Heading>
       </HStack>
 
       <Flex gap={6}>

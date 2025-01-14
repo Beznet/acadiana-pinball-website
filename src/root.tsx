@@ -15,6 +15,7 @@ import type { Route } from './+types/root';
 
 // fonts
 import '@fontsource-variable/plus-jakarta-sans';
+import '@fontsource/press-start-2p';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
