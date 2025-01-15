@@ -13,7 +13,8 @@ export const Layout = ({ children }: LayoutProps) => {
   return (
     <Flex direction="column" minHeight="100vh">
       <Box
-        width="80%"
+        maxWidth={{ base: '95%', md: '80%' }}
+        width="full"
         pb={4}
         bg="white"
         boxShadow={'md'}
@@ -32,7 +33,7 @@ export const Layout = ({ children }: LayoutProps) => {
         flex="1"
         width="full"
         marginY={22}
-        maxWidth="80%"
+        maxWidth={{ base: '95%', md: '80%' }}
         margin="0 auto"
         pt="8"
         transition="0.5s ease-out"
