@@ -1,4 +1,5 @@
 import { Flex, HStack, Heading, Link } from '@chakra-ui/react';
+import { Demo } from './mobile-drawer';
 
 export const Header = () => {
   return (
@@ -13,7 +14,11 @@ export const Header = () => {
         </Heading>
       </HStack>
 
-      <Flex gap={6}>
+      <Flex display={{ base: 'flex', md: 'none' }}>
+        <Demo />
+      </Flex>
+
+      <Flex gap={6} display={{ base: 'none', md: 'flex' }}>
         <Link href="/" _hover={{ textDecoration: 'underline' }}>
           Home
         </Link>
