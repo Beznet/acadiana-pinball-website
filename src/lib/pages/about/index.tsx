@@ -18,9 +18,10 @@ function About() {
         Welcome to Acadiana Pinball Players! The place for all things pinball in
         the heart of Louisiana! We’re a community of pinball enthusiasts
         dedicated to celebrating the game and growing the competitive pinball
-        scene in the Acadiana area. Whether you're a casual player or a seasoned
-        flipper, our goal is to foster a welcoming environment where players can
-        connect, improve their skills, and compete in tournaments.
+        scene in Lafayette, Carencro, Breaux Bridge, Youngsville and surrounding
+        areas. Whether you're a casual player or a seasoned flipper, our goal is
+        to foster a welcoming environment where players can connect, improve
+        their skills, and compete in tournaments.
       </Text>
 
       <Heading size="md">Our Mission</Heading>

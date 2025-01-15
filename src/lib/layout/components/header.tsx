@@ -7,6 +7,7 @@ export const Header = () => {
         <Heading
           fontSize={['sm', 'md', 'xl', '3xl']}
           fontFamily="'Press Start 2P', sans-serif"
+          textAlign={'center'}
         >
           Acadiana Pinball Players
         </Heading>

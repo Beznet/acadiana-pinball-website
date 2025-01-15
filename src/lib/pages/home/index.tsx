@@ -8,7 +8,7 @@ const Home = () => {
     >
       <Box width={{ lg: '50%' }} m={6} p={2}>
         <Heading textAlign={'center'} mb="2" fontSize="2xl">
-          Welcome yall!
+          Welcome!
         </Heading>
         <Text mb={2}>
           Pinball in Acadiana? Hell yeah and we're just getting started! Be sure
