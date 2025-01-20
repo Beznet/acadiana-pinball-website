@@ -1,10 +1,12 @@
 import { Flex, HStack, Heading, Link } from '@chakra-ui/react';
+import { RandomFlipper } from './flipper';
 import { Demo } from './mobile-drawer';
 
 export const Header = () => {
   return (
     <Flex as="header" width="full" align="center" direction="column" rowGap={4}>
       <HStack>
+        <RandomFlipper rotateFlipper={false} />
         <Heading
           fontSize={['sm', 'md', 'xl', '3xl']}
           fontFamily="'Press Start 2P', sans-serif"
@@ -12,6 +14,7 @@ export const Header = () => {
         >
           Acadiana Pinball Players
         </Heading>
+        <RandomFlipper rotateFlipper={true} />
       </HStack>
 
       <Flex display={{ base: 'flex', md: 'none' }}>
