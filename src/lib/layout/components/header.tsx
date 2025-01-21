@@ -8,7 +8,7 @@ export const Header = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  const isActive = (path: string) => currentPath === path;
+  const isActive = (path: string) => currentPath.includes(path);
 
   return (
     <Flex as="header" width="full" align="center" direction="column" rowGap={4}>
