@@ -10,6 +10,8 @@ export const Header = () => {
 
   const isActive = (path: string) => currentPath.includes(path);
 
+  console.log(currentPath, isActive)
+
   return (
     <Flex as="header" width="full" align="center" direction="column" rowGap={4}>
       <HStack>
