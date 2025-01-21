@@ -1,9 +1,15 @@
 import { Flex, HStack, Heading, Link } from '@chakra-ui/react';
+import { useLocation } from 'react-router';
 import { LeftFlipper } from './left-flipper';
 import { Demo } from './mobile-drawer';
 import { RightFlipper } from './right-flipper';
 
 export const Header = () => {
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  const isActive = (path: string) => currentPath === path;
+
   return (
     <Flex as="header" width="full" align="center" direction="column" rowGap={4}>
       <HStack>
@@ -33,16 +39,32 @@ export const Header = () => {
       </Flex>
 
       <Flex gap={6} display={{ base: 'none', md: 'flex' }}>
-        <Link href="/" _hover={{ textDecoration: 'underline' }}>
+        <Link
+          href="/"
+          fontWeight={isActive('/') ? 'bold' : 'normal'}
+          _hover={{ textDecoration: 'underline' }}
+        >
           Home
         </Link>
-        <Link href="/new-players" _hover={{ textDecoration: 'underline' }}>
+        <Link
+          href="/new-players"
+          fontWeight={isActive('/new-players') ? 'bold' : 'normal'}
+          _hover={{ textDecoration: 'underline' }}
+        >
           New Players Guide
         </Link>
-        <Link href="/resources" _hover={{ textDecoration: 'underline' }}>
+        <Link
+          href="/resources"
+          fontWeight={isActive('/resources') ? 'bold' : 'normal'}
+          _hover={{ textDecoration: 'underline' }}
+        >
           Resources
         </Link>
-        <Link href="/about" _hover={{ textDecoration: 'underline' }}>
+        <Link
+          href="/about"
+          fontWeight={isActive('/about') ? 'bold' : 'normal'}
+          _hover={{ textDecoration: 'underline' }}
+        >
           About
         </Link>
       </Flex>
