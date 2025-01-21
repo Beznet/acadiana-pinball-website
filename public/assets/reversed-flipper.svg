@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" xmlns:bx="https://boxy-svg.com" width="32px" height="32px">
+  <defs>
+    <bx:export>
+      <bx:file format="svg"/>
+    </bx:export>
+  </defs>
+  <style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+  <path class="st0" d="M 3.5 24.943 C 2.1 21.843 3.7 18.243 6.9 17.243 L 22 12.343 C 23.9 11.743 25.9 12.643 26.7 14.443 C 27.5 16.243 26.9 18.343 25.2 19.343 L 11.6 27.443 C 8.7 29.243 4.9 28.043 3.5 24.943 Z" style="transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(-1, 0, 0, -1, 0, 0.000002)"/>
+  <circle class="st0" cx="20.848" cy="18.056" r="2"/>
+</svg>
