@@ -4,13 +4,15 @@ import { LeftFlipper } from './left-flipper';
 import { Demo } from './mobile-drawer';
 import { RightFlipper } from './right-flipper';
 
+const TRAILING_SLASH_REGEX = /\/$/;
+
 export const Header = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  const isActive = (path: string) => currentPath.includes(path);
-
-  console.log(currentPath, isActive)
+  const isActive = (path: string) =>
+    currentPath.replace(TRAILING_SLASH_REGEX, '') ===
+    path.replace(TRAILING_SLASH_REGEX, '');
 
   return (
     <Flex as="header" width="full" align="center" direction="column" rowGap={4}>
