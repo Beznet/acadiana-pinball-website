@@ -26,3 +26,6 @@ coverage/
 
 # React Router
 .react-router
+
+# ENV
+.env
