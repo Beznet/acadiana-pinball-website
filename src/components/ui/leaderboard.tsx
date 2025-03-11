@@ -20,7 +20,7 @@ export const LouisianaStandings = () => {
     const fetchStandings = async () => {
       try {
         const response = await fetch(
-          'http://localhost:3000/standings?year=2025&regionCode=LA',
+          '/.netlify/functions/getStandings?year=2025&regionCode=LA',
         );
 
         if (!response.ok) {
