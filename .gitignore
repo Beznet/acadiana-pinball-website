@@ -26,3 +26,8 @@ coverage/
 
 # React Router
 .react-router
+
+# ENV
+.env
+# Local Netlify folder
+.netlify
