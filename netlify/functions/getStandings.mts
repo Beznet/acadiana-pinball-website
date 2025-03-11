@@ -1,6 +1,6 @@
 import { Context } from "@netlify/functions";
 
-export default async (req: Request, context: Context) => {
+export default async (req: Request, _context: Context) => {
   const url = new URL(req.url);
   const year = url.searchParams.get("year");
   const regionCode = url.searchParams.get("regionCode");
@@ -54,8 +54,10 @@ export default async (req: Request, context: Context) => {
     });
   } catch (error) {
     console.error("Error fetching standings:", error);
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
     return new Response(
-      JSON.stringify({ error: `Internal Server Error: ${error.message}` }),
+      JSON.stringify({ error: `Internal Server Error: ${errorMessage}` }),
       {
         status: 500,
         headers: { "Content-Type": "application/json" },
