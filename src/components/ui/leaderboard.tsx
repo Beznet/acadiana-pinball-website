@@ -1,4 +1,5 @@
-import { Table } from '@chakra-ui/react';
+import { formatLocation } from '@/lib/utils/format-location';
+import { Box, Link, Spinner, Table } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 export const LouisianaStandings = () => {
@@ -15,6 +16,7 @@ export const LouisianaStandings = () => {
 
   const [standings, setStandings] = useState<Array<Standing>>([]);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchStandings = async () => {
@@ -29,12 +31,14 @@ export const LouisianaStandings = () => {
 
         const data = await response.json();
         setStandings(data);
+        setLoading(false);
       } catch (err) {
         if (err instanceof Error) {
           setError(err.message || 'An unexpected error occurred.');
         } else {
           setError('An unexpected error occurred.');
         }
+        setLoading(false);
       }
     };
 
@@ -45,15 +49,38 @@ export const LouisianaStandings = () => {
     return <div>Error: {error}</div>;
   }
 
+  if (loading) {
+    return (
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height="50vh"
+      >
+        <Spinner size="xl" />
+      </Box>
+    );
+  }
   return (
     <Table.ScrollArea borderWidth="1px" rounded="md" height="50vh">
-      <Table.Root size="sm" stickyHeader colorScheme={'orange'}>
-        <Table.Caption>Source: IFPA NACS Standings LA</Table.Caption>
+      <Table.Root size="sm" stickyHeader striped>
+        <Table.Caption>
+          Source:{' '}
+          <Link
+            href="https://www.ifpapinball.com/series/nacs/2025/standingsView.php?l=LA"
+            _hover={{ textDecoration: 'underline' }}
+          >
+            IFPA NACS Standings LA
+          </Link>
+        </Table.Caption>
         <Table.Header>
-          <Table.Row bg="bg.subtle">
-            <Table.ColumnHeader>Player</Table.ColumnHeader>
-            <Table.ColumnHeader>Location</Table.ColumnHeader>
-            <Table.ColumnHeader>LA Rank</Table.ColumnHeader>
+          <Table.Row bg="bg.emphasized">
+            <Table.ColumnHeader fontWeight={'bold'}>Player</Table.ColumnHeader>
+            <Table.ColumnHeader fontWeight={'bold'}>
+              Location
+            </Table.ColumnHeader>
+            <Table.ColumnHeader fontWeight={'bold'}>WPPRs</Table.ColumnHeader>
+            <Table.ColumnHeader fontWeight={'bold'}>LA Rank</Table.ColumnHeader>
           </Table.Row>
         </Table.Header>
 
@@ -62,8 +89,9 @@ export const LouisianaStandings = () => {
             <Table.Row key={standing.player_id}>
               <Table.Cell>{standing.player_name}</Table.Cell>
               <Table.Cell>
-                {standing?.city}, {standing?.stateprov_code}
+                {formatLocation(standing.city, standing.stateprov_code)}
               </Table.Cell>
+              <Table.Cell>{standing.wppr_points}</Table.Cell>
               <Table.Cell>{standing.series_rank}</Table.Cell>
             </Table.Row>
           ))}
