@@ -1,5 +1,6 @@
 import { Box, Link, Spinner, Table } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 export const EventsCalendar = () => {
   interface Event {
@@ -65,7 +66,7 @@ export const EventsCalendar = () => {
         <Table.Header>
           <Table.Row bg="bg.emphasized">
             <Table.ColumnHeader fontWeight={'bold'}>
-              Tournament Name
+              Tournament
             </Table.ColumnHeader>
             <Table.ColumnHeader fontWeight={'bold'}>City</Table.ColumnHeader>
             <Table.ColumnHeader fontWeight={'bold'}>State</Table.ColumnHeader>
@@ -80,6 +81,7 @@ export const EventsCalendar = () => {
                   href={event.website}
                   _hover={{ textDecoration: 'underline' }}
                 >
+                  <FaExternalLinkAlt />
                   {event.tournament_name}
                 </Link>
               </Table.Cell>
