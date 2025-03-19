@@ -1,3 +1,4 @@
+import { EventsCalendar } from '@/components/ui/events';
 import { LouisianaStandings } from '@/components/ui/leaderboard';
 import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react';
 
@@ -54,16 +55,7 @@ const Home = () => {
           <Heading textAlign={'center'} mb="2" fontSize="2xl">
             Upcoming Events
           </Heading>
-          <Box
-            border={'1px solid gray'}
-            rounded={'md'}
-            bgColor={'gray.100'}
-            height={'100%'}
-            textAlign={'center'}
-            alignContent={'center'}
-          >
-            coming soon...
-          </Box>
+          <EventsCalendar />
         </Box>
       </Flex>
       <Box m={6} p={2}>
