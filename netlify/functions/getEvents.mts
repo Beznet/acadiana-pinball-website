@@ -34,23 +34,24 @@ export default async (req: Request, _context: Context) => {
   sixMonthsOut.setMonth(sixMonthsOut.getMonth() + 6);
 
   try {
-    const apiUrl = `${BASE_URL}?stateprov=${regionCode}start_date=${todaysDate.toISOString().split("T")[0]}&end_date=${sixMonthsOut.toISOString().split("T")[0]}&total=20`;
+    const apiUrl = `${BASE_URL}?stateprov=${regionCode}&start_date=${todaysDate.toISOString().split("T")[0]}&end_date=${sixMonthsOut.toISOString().split("T")[0]}&total=20`;
+    console.log("api url:", apiUrl);
     const response = await fetch(apiUrl, {
       headers: { "X-API-Key": API_KEY },
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch standings: ${response.status}`);
+      throw new Error(`Failed to fetch tournaments: ${response.status}`);
     }
 
     const data = await response.json();
-    const standings = data.standings || [];
+    const tournaments = data.tournaments || [];
 
-    return new Response(JSON.stringify(standings), {
+    return new Response(JSON.stringify(tournaments), {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
-    console.error("Error fetching standings:", error);
+    console.error("Error fetching tournaments:", error);
     const errorMessage =
       error instanceof Error ? error.message : "Unknown error";
     return new Response(
