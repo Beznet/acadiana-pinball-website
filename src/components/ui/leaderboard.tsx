@@ -62,8 +62,8 @@ export const LouisianaStandings = () => {
     );
   }
   return (
-    <Table.ScrollArea borderWidth="1px" rounded="md" height="50vh">
-      <Table.Root size="sm" stickyHeader striped>
+    <Table.ScrollArea borderWidth="1px" rounded="md" height="40vh">
+      <Table.Root size="sm" stickyHeader striped colorPalette={'orange'}>
         <Table.Caption>
           Source:{' '}
           <Link

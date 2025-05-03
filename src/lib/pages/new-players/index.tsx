@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet-async';
 
 function NewPlayers() {
   return (
-    <Box px={8}>
+    <Box m={{ lg: 6 }} p={2}>
       <Helmet>
         <title>New Player Guide | Acadiana Pinball Players</title>
         <meta
@@ -19,12 +19,7 @@ function NewPlayers() {
           content="Learn the basics of competitive pinball in the Acadiana, LA area. Find out how to get started, where to play, and how to connect with other players."
         />
       </Helmet>
-      <Heading
-        size="2xl"
-        textAlign="center"
-        textDecoration={'underline'}
-        mb={4}
-      >
+      <Heading size={{ base: 'xl', lg: '2xl' }} textAlign="center" mb={4}>
         New Player Guide
       </Heading>
       <Box mb={2}>
@@ -106,10 +101,9 @@ function NewPlayers() {
             then its game over.
           </List.Item>
           <List.Item mb={1}>
-            <strong>Speaking of balls... DON'T PLAY EXTRA BALLS</strong> - if
-            you get an extra ball during your game, plunge it and let it drain.
-            This keeps things fair as extra balls can sometimes be a random
-            award.
+            <strong>Don't play extra balls</strong> - if you get an extra ball
+            during your game, plunge it and let it drain. This keeps things fair
+            as extra balls can sometimes be a random award.
           </List.Item>
           <List.Item mb={1}>
             <strong>Ball stuck? Raise your hand</strong> - if your ball gets

@@ -11,8 +11,12 @@ const Home = () => {
         flexDirection={{ base: 'column', lg: 'row' }}
         justifyContent={'center'}
       >
-        <Box width={{ lg: '50%' }} m={6} p={2}>
-          <Heading textAlign={'center'} mb="2" fontSize="2xl">
+        <Box width={{ base: '100%', lg: '50%' }} m={{ lg: 6 }} p={2}>
+          <Heading
+            textAlign={'center'}
+            mb="2"
+            fontSize={{ base: 'xl', lg: '2xl' }}
+          >
             Welcome!
           </Heading>
           <Text mb={2}>
@@ -21,17 +25,17 @@ const Home = () => {
             casual play.
           </Text>
           <Text mb={2}>
-            Not sure where to find pinball, check out this handy{' '}
+            Not sure where to find pinball? Check out this handy{' '}
             <Link variant="underline" href="https://pinballmap.com/">
               Pinball Map!
             </Link>
-            <Text>
-              If you're a new player and unsure where to start in the
-              competitive pinabll scene, check out the{' '}
-              <Link variant="underline" href="/new-players">
-                new player guide.
-              </Link>
-            </Text>
+          </Text>
+          <Text mb={2}>
+            If you're a new player and unsure where to start in the competitive
+            pinball scene, check out the{' '}
+            <Link variant="underline" href="/new-players">
+              new player guide.
+            </Link>
           </Text>
 
           <Text mb={2}>
@@ -53,7 +57,7 @@ const Home = () => {
           bg="gray.200"
           mx={4}
         />
-        <Box width={{ lg: '50%' }} m={6} p={2}>
+        <Box width={{ base: '100%', lg: '50%' }} m={{ lg: 6 }} p={2}>
           <ImageSlider slides={slides} />
         </Box>
       </Flex>
@@ -61,15 +65,23 @@ const Home = () => {
         flexDirection={{ base: 'column', lg: 'row' }}
         justifyContent={'center'}
       >
-        <Box width={{ lg: '50%' }} m={6} p={2}>
-          <Heading textAlign={'center'} mb="2" fontSize="2xl">
+        <Box width={{ base: '100%', lg: '50%' }} m={{ lg: 6 }} p={2}>
+          <Heading
+            textAlign={'center'}
+            mb="2"
+            fontSize={{ base: 'xl', lg: '2xl' }}
+          >
             Upcoming Events
           </Heading>
           <EventsCalendar />
         </Box>
-        <Box width={{ lg: '50%' }} m={6} p={2}>
-          <Heading textAlign={'center'} mb="2" fontSize="2xl">
-            {new Date().getFullYear()} Louisiana Leaderboard
+        <Box width={{ base: '100%', lg: '50%' }} m={{ lg: 6 }} p={2}>
+          <Heading
+            textAlign={'center'}
+            mb="2"
+            fontSize={{ base: 'xl', lg: '2xl' }}
+          >
+            🏆 {new Date().getFullYear()} Louisiana Leaderboard 🏆
           </Heading>
           <LouisianaStandings />
         </Box>
