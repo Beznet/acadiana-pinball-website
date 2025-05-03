@@ -1,5 +1,7 @@
 import { EventsCalendar } from '@/components/ui/events';
+import { ImageSlider } from '@/components/ui/image-slider';
 import { LouisianaStandings } from '@/components/ui/leaderboard';
+import { slides } from '@/data/slides';
 import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react';
 
 const Home = () => {
@@ -52,18 +54,26 @@ const Home = () => {
           mx={4}
         />
         <Box width={{ lg: '50%' }} m={6} p={2}>
+          <ImageSlider slides={slides} />
+        </Box>
+      </Flex>
+      <Flex
+        flexDirection={{ base: 'column', lg: 'row' }}
+        justifyContent={'center'}
+      >
+        <Box width={{ lg: '50%' }} m={6} p={2}>
           <Heading textAlign={'center'} mb="2" fontSize="2xl">
             Upcoming Events
           </Heading>
           <EventsCalendar />
         </Box>
+        <Box width={{ lg: '50%' }} m={6} p={2}>
+          <Heading textAlign={'center'} mb="2" fontSize="2xl">
+            {new Date().getFullYear()} Louisiana Leaderboard
+          </Heading>
+          <LouisianaStandings />
+        </Box>
       </Flex>
-      <Box m={6} p={2}>
-        <Heading textAlign={'center'} mb="2" fontSize="2xl">
-          {new Date().getFullYear()} Louisiana Leaderboard
-        </Heading>
-        <LouisianaStandings />
-      </Box>
     </>
   );
 };
