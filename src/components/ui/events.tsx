@@ -7,7 +7,6 @@ export const EventsCalendar = () => {
     tournament_id: string;
     tournament_name: string;
     city: string;
-    stateprov: string;
     event_start_date: string;
     website: string;
   }
@@ -61,15 +60,16 @@ export const EventsCalendar = () => {
   }
 
   return (
-    <Table.ScrollArea borderWidth="1px" rounded="md" height="20vh">
+    <Table.ScrollArea borderWidth="1px" rounded="md" height="40vh">
       <Table.Root size="sm" stickyHeader striped>
         <Table.Header>
           <Table.Row bg="bg.emphasized">
             <Table.ColumnHeader fontWeight={'bold'}>
               Tournament
             </Table.ColumnHeader>
-            <Table.ColumnHeader fontWeight={'bold'}>City</Table.ColumnHeader>
-            <Table.ColumnHeader fontWeight={'bold'}>State</Table.ColumnHeader>
+            <Table.ColumnHeader fontWeight={'bold'}>
+              Location
+            </Table.ColumnHeader>
             <Table.ColumnHeader fontWeight={'bold'}>Date</Table.ColumnHeader>
           </Table.Row>
         </Table.Header>
@@ -85,30 +85,8 @@ export const EventsCalendar = () => {
                   {event.tournament_name}
                 </Link>
               </Table.Cell>
-              <Table.Cell>
-                <Link
-                  href={event.website}
-                  _hover={{ textDecoration: 'underline' }}
-                >
-                  {event.city}
-                </Link>
-              </Table.Cell>
-              <Table.Cell>
-                <Link
-                  href={event.website}
-                  _hover={{ textDecoration: 'underline' }}
-                >
-                  {event.stateprov}
-                </Link>
-              </Table.Cell>
-              <Table.Cell>
-                <Link
-                  href={event.website}
-                  _hover={{ textDecoration: 'underline' }}
-                >
-                  {event.event_start_date}
-                </Link>
-              </Table.Cell>
+              <Table.Cell>{event.city}</Table.Cell>
+              <Table.Cell>{event.event_start_date}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

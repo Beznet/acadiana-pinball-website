@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 function About() {
   return (
-    <Box p={8}>
+    <Box m={{ lg: 6 }} p={2}>
       <Helmet>
         <title>About | Acadiana Pinball Players</title>
         <meta

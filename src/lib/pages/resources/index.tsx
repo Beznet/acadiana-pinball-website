@@ -3,7 +3,7 @@ import { LuExternalLink } from 'react-icons/lu';
 
 function Resources() {
   return (
-    <Box p={8}>
+    <Box m={{ lg: 6 }} p={2}>
       <Heading size="2xl" textAlign="center">
         Pinball Resources
       </Heading>

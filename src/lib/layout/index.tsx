@@ -22,7 +22,7 @@ export const Layout = ({ children }: LayoutProps) => {
         borderBottom="2px solid"
         borderColor="gray.200"
         zIndex="10"
-        pt="4"
+        pt={{ lg: 4 }}
       >
         <Meta />
         <Header />
@@ -35,7 +35,7 @@ export const Layout = ({ children }: LayoutProps) => {
         marginY={22}
         maxWidth={{ base: '95%', md: '80%' }}
         margin="0 auto"
-        pt="8"
+        pt={{ lg: 4 }}
         transition="0.5s ease-out"
         bgColor="white"
         boxShadow="md"
