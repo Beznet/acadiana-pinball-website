@@ -1,4 +1,12 @@
-import { Box, Link, Spinner, Table } from '@chakra-ui/react';
+import { formatDate } from '@/lib/utils/format-date';
+import {
+  Box,
+  Link,
+  Spinner,
+  Text,
+  VStack,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
@@ -14,6 +22,7 @@ export const EventsCalendar = () => {
   const [events, setEvents] = useState<Array<Event>>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -30,11 +39,7 @@ export const EventsCalendar = () => {
         setEvents(data);
         setLoading(false);
       } catch (err) {
-        if (err instanceof Error) {
-          setError(err.message || 'An unexpected error occurred.');
-        } else {
-          setError('An unexpected error occurred.');
-        }
+        setError(err instanceof Error ? err.message : 'Unexpected error');
         setLoading(false);
       }
     };
@@ -43,54 +48,88 @@ export const EventsCalendar = () => {
   }, []);
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <Text color="red.500">Error: {error}</Text>;
   }
 
   if (loading) {
     return (
-      <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        height="50vh"
-      >
+      <Box display="flex" justifyContent="center" alignItems="center" h="50vh">
         <Spinner size="xl" />
       </Box>
     );
   }
 
-  return (
-    <Table.ScrollArea borderWidth="1px" rounded="md" height="40vh">
-      <Table.Root size="sm" stickyHeader striped>
-        <Table.Header>
-          <Table.Row bg="bg.emphasized">
-            <Table.ColumnHeader fontWeight={'bold'}>
-              Tournament
-            </Table.ColumnHeader>
-            <Table.ColumnHeader fontWeight={'bold'}>
-              Location
-            </Table.ColumnHeader>
-            <Table.ColumnHeader fontWeight={'bold'}>Date</Table.ColumnHeader>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
+  if (isMobile) {
+    return (
+      <Box maxHeight="50vh" overflowY="auto" pr={2}>
+        <VStack align="stretch">
           {events.map((event) => (
-            <Table.Row key={event.tournament_id}>
-              <Table.Cell>
+            <Box
+              key={event.tournament_id}
+              borderWidth="1px"
+              borderRadius="md"
+              p={4}
+              boxShadow="sm"
+            >
+              <Link
+                href={event.website}
+                fontWeight="bold"
+                display="flex"
+                alignItems="center"
+                gap={2}
+                mb={2}
+              >
+                <FaExternalLinkAlt /> {event.tournament_name}
+              </Link>
+              <Text fontSize="sm">
+                📍 {event.city} | 🗓 {formatDate(event.event_start_date)}
+              </Text>
+            </Box>
+          ))}
+        </VStack>
+      </Box>
+    );
+  }
+
+  // DESKTOP
+  return (
+    <Box maxHeight="40vh" overflowY="auto" pr={2}>
+      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <thead>
+          <tr style={{ backgroundColor: '#f7f7f7' }}>
+            <th style={{ textAlign: 'left', padding: '8px' }}>Tournament</th>
+            <th style={{ textAlign: 'left', padding: '8px' }}>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          {events.map((event) => (
+            <tr key={event.tournament_id}>
+              <td style={{ padding: '8px' }}>
                 <Link
                   href={event.website}
+                  display="flex"
+                  alignItems="center"
+                  gap="6px"
                   _hover={{ textDecoration: 'underline' }}
+                  style={{ fontWeight: 'bold' }}
                 >
-                  <FaExternalLinkAlt />
+                  <FaExternalLinkAlt style={{ marginBottom: '2px' }} />
                   {event.tournament_name}
                 </Link>
-              </Table.Cell>
-              <Table.Cell>{event.city}</Table.Cell>
-              <Table.Cell>{event.event_start_date}</Table.Cell>
-            </Table.Row>
+                <div style={{ fontSize: '0.85rem', color: '#555' }}>
+                  {formatDate(event.event_start_date)}
+                </div>
+              </td>
+              <td style={{ padding: '8px' }}>
+                <span role="img" aria-label="location">
+                  📍
+                </span>{' '}
+                {event.city}
+              </td>
+            </tr>
           ))}
-        </Table.Body>
-      </Table.Root>
-    </Table.ScrollArea>
+        </tbody>
+      </table>
+    </Box>
   );
 };

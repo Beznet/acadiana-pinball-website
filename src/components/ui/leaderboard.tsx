@@ -1,4 +1,3 @@
-import { formatLocation } from '@/lib/utils/format-location';
 import { Box, Link, Spinner, Table } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
@@ -62,8 +61,8 @@ export const LouisianaStandings = () => {
     );
   }
   return (
-    <Table.ScrollArea borderWidth="1px" rounded="md" height="40vh">
-      <Table.Root size="sm" stickyHeader striped colorPalette={'orange'}>
+    <Table.ScrollArea borderWidth="1px" rounded="md" maxHeight="40vh">
+      <Table.Root size="md" stickyHeader striped colorPalette={'orange'}>
         <Table.Caption>
           Source:{' '}
           <Link
@@ -76,11 +75,8 @@ export const LouisianaStandings = () => {
         <Table.Header>
           <Table.Row bg="bg.emphasized">
             <Table.ColumnHeader fontWeight={'bold'}>Player</Table.ColumnHeader>
-            <Table.ColumnHeader fontWeight={'bold'}>
-              Location
-            </Table.ColumnHeader>
+            <Table.ColumnHeader fontWeight={'bold'}>Rank</Table.ColumnHeader>
             <Table.ColumnHeader fontWeight={'bold'}>WPPRs</Table.ColumnHeader>
-            <Table.ColumnHeader fontWeight={'bold'}>LA Rank</Table.ColumnHeader>
           </Table.Row>
         </Table.Header>
 
@@ -88,11 +84,8 @@ export const LouisianaStandings = () => {
           {standings.map((standing) => (
             <Table.Row key={standing.player_id}>
               <Table.Cell>{standing.player_name}</Table.Cell>
-              <Table.Cell>
-                {formatLocation(standing.city, standing.stateprov_code)}
-              </Table.Cell>
-              <Table.Cell>{standing.wppr_points}</Table.Cell>
               <Table.Cell>{standing.series_rank}</Table.Cell>
+              <Table.Cell>{standing.wppr_points}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

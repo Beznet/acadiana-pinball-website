@@ -1,4 +1,5 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { Flex, IconButton, Link } from '@chakra-ui/react';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 export const Footer = () => {
   return (
@@ -6,10 +7,19 @@ export const Footer = () => {
       as="footer"
       width="full"
       align="center"
-      alignSelf="flex-end"
       justifyContent="center"
+      gap={2}
     >
-      <Text fontSize="xs">For the {'\u2665'} of pinball</Text>
+      <Link href="https://www.facebook.com/share/g/1YMaMmKDid/">
+        <IconButton aria-label="Facebook" variant="ghost" size="md">
+          <FaFacebook />
+        </IconButton>
+      </Link>
+      <Link href="https://www.instagram.com/acadianapinballplayers/">
+        <IconButton aria-label="Instagram" variant="ghost" size="md">
+          <FaInstagram />
+        </IconButton>
+      </Link>
     </Flex>
   );
 };
