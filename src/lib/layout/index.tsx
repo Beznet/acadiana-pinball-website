@@ -43,7 +43,9 @@ export const Layout = ({ children }: LayoutProps) => {
         {children}
       </Box>
 
-      <Footer />
+      <Box maxWidth={{ base: '95%', md: '80%' }} width="full" margin="0 auto">
+        <Footer />
+      </Box>
     </Flex>
   );
 };
