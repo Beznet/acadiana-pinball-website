@@ -16,6 +16,7 @@ const Home = () => {
             textAlign={'center'}
             mb="2"
             fontSize={{ base: 'xl', lg: '2xl' }}
+            color="acadianaBlue.700"
           >
             Welcome!
           </Heading>
@@ -26,14 +27,14 @@ const Home = () => {
           </Text>
           <Text mb={2}>
             Not sure where to find pinball? Check out this handy{' '}
-            <Link variant="underline" href="https://pinballmap.com/">
+            <Link color="acadianaBlue.700" _hover={{ color: 'acadianaRed.500', textDecoration: 'none' }} href="https://pinballmap.com/">
               Pinball Map!
             </Link>
           </Text>
           <Text mb={2}>
             If you're a new player and unsure where to start in the competitive
             pinball scene, check out the{' '}
-            <Link variant="underline" href="/new-players">
+            <Link color="acadianaBlue.700" _hover={{ color: 'acadianaRed.500', textDecoration: 'none' }} href="/new-players">
               new player guide.
             </Link>
           </Text>
@@ -41,7 +42,8 @@ const Home = () => {
           <Text mb={2}>
             Be sure to join the{' '}
             <Link
-              variant="underline"
+              color="acadianaBlue.700"
+              _hover={{ color: 'acadianaRed.500', textDecoration: 'none' }}
               href="https://www.facebook.com/share/g/1PCVbjN6A1/"
             >
               Acadiana Pinball Players Facebook Group
@@ -70,6 +72,7 @@ const Home = () => {
             textAlign={'center'}
             mb="2"
             fontSize={{ base: 'xl', lg: '2xl' }}
+            color="acadianaBlue.700"
           >
             Upcoming Events
           </Heading>
@@ -80,6 +83,7 @@ const Home = () => {
             textAlign={'center'}
             mb="2"
             fontSize={{ base: 'xl', lg: '2xl' }}
+            color="acadianaBlue.700"
           >
             🏆 {new Date().getFullYear()} Louisiana Leaderboard 🏆
           </Heading>
