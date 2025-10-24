@@ -51,8 +51,8 @@ function About() {
         </List.Root>
       </Text>
 
-      <Heading size="md">Join the Fun! 🎉 </Heading>
-      <Text>
+      <Heading size="md">Join the Fun! </Heading>
+      <Text mb={4}>
         Ready to play? Join us at our next event or connect with others on our{' '}
         <Link
           variant="underline"
@@ -61,6 +61,15 @@ function About() {
           Facebook Page
         </Link>
         . Follow us for updates on tournaments, meetups, and more!
+      </Text>
+
+      <Heading size="md">Questions?</Heading>
+      <Text>
+        You can email us at{' '}
+        <Link variant="underline" href="mailto:acadianapinball@gmail.com">
+          acadianapinball@gmail.com
+        </Link>
+        .
       </Text>
     </Box>
   );
