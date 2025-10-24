@@ -20,7 +20,7 @@ export const Layout = ({ children }: LayoutProps) => {
         boxShadow={'md'}
         margin="0 auto"
         borderBottom="2px solid"
-        borderColor="gray.200"
+        borderColor="acadianaRed.500"
         zIndex="10"
         pt={{ lg: 4 }}
       >
@@ -37,7 +37,7 @@ export const Layout = ({ children }: LayoutProps) => {
         margin="0 auto"
         pt={{ lg: 4 }}
         transition="0.5s ease-out"
-        bgColor="white"
+        bgColor="acadianaBlue.50"
         boxShadow="md"
       >
         {children}

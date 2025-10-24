@@ -78,6 +78,8 @@ export const EventsCalendar = () => {
                 alignItems="center"
                 gap={2}
                 mb={2}
+                color="acadianaBlue.700"
+                _hover={{ color: 'acadianaRed.500' }}
               >
                 <FaExternalLinkAlt /> {event.tournament_name}
               </Link>
@@ -110,13 +112,14 @@ export const EventsCalendar = () => {
                   display="flex"
                   alignItems="center"
                   gap="6px"
-                  _hover={{ textDecoration: 'underline' }}
+                  color="acadianaBlue.700"
+                  _hover={{ color: 'acadianaRed.500', textDecoration: 'none' }}
                   style={{ fontWeight: 'bold' }}
                 >
                   <FaExternalLinkAlt style={{ marginBottom: '2px' }} />
                   {event.tournament_name}
                 </Link>
-                <div style={{ fontSize: '0.85rem', color: '#555' }}>
+                <div style={{ fontSize: '0.85rem', color: 'var(--chakra-colors-gray-600)' }}>
                   {formatDate(event.event_start_date)}
                 </div>
               </td>

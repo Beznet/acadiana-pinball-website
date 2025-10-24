@@ -11,12 +11,12 @@ export const Footer = () => {
       gap={2}
     >
       <Link href="https://www.facebook.com/share/g/1YMaMmKDid/">
-        <IconButton aria-label="Facebook" variant="ghost" size="md">
+        <IconButton aria-label="Facebook" variant="ghost" size="md" color="acadianaBlue.700">
           <FaFacebook />
         </IconButton>
       </Link>
       <Link href="https://www.instagram.com/acadianapinballplayers/">
-        <IconButton aria-label="Instagram" variant="ghost" size="md">
+        <IconButton aria-label="Instagram" variant="ghost" size="md" color="acadianaGold.700">
           <FaInstagram />
         </IconButton>
       </Link>

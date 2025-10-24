@@ -14,6 +14,7 @@ export const Header = () => {
           fontSize={['sm', 'md', 'xl', '3xl']}
           fontFamily="'Press Start 2P', sans-serif"
           textAlign={'center'}
+          color="acadianaBlue.700"
         >
           Acadiana Pinball Players
         </Heading>
@@ -33,16 +34,16 @@ export const Header = () => {
       </Flex>
 
       <Flex gap={6} display={{ base: 'none', md: 'flex' }}>
-        <Link href="/" _hover={{ textDecoration: 'underline' }}>
+        <Link href="/" color="acadianaBlue.700" _hover={{ color: 'acadianaRed.500' }}>
           Home
         </Link>
-        <Link href="/new-players" _hover={{ textDecoration: 'underline' }}>
+        <Link href="/new-players" color="acadianaBlue.700" _hover={{ color: 'acadianaRed.500' }}>
           New Players Guide
         </Link>
-        <Link href="/resources" _hover={{ textDecoration: 'underline' }}>
+        <Link href="/resources" color="acadianaBlue.700" _hover={{ color: 'acadianaRed.500' }}>
           Resources
         </Link>
-        <Link href="/about" _hover={{ textDecoration: 'underline' }}>
+        <Link href="/about" color="acadianaBlue.700" _hover={{ color: 'acadianaRed.500' }}>
           About
         </Link>
       </Flex>

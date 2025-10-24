@@ -62,28 +62,29 @@ export const LouisianaStandings = () => {
   }
   return (
     <Table.ScrollArea borderWidth="1px" rounded="md" maxHeight="40vh">
-      <Table.Root size="md" stickyHeader striped colorPalette={'orange'}>
+      <Table.Root size="md" stickyHeader striped>
         <Table.Caption>
           Source:{' '}
           <Link
             href="https://www.ifpapinball.com/series/nacs/2025/standingsView.php?l=LA"
-            _hover={{ textDecoration: 'underline' }}
+            color="acadianaBlue.700"
+            _hover={{ color: 'acadianaRed.500', textDecoration: 'none' }}
           >
             IFPA NACS Standings LA
           </Link>
         </Table.Caption>
         <Table.Header>
           <Table.Row bg="bg.emphasized">
-            <Table.ColumnHeader fontWeight={'bold'}>Player</Table.ColumnHeader>
-            <Table.ColumnHeader fontWeight={'bold'}>Rank</Table.ColumnHeader>
-            <Table.ColumnHeader fontWeight={'bold'}>WPPRs</Table.ColumnHeader>
+            <Table.ColumnHeader fontWeight={'bold'} color="acadianaBlue.700">Player</Table.ColumnHeader>
+            <Table.ColumnHeader fontWeight={'bold'} color="acadianaBlue.700">Rank</Table.ColumnHeader>
+            <Table.ColumnHeader fontWeight={'bold'} color="acadianaBlue.700">WPPRs</Table.ColumnHeader>
           </Table.Row>
         </Table.Header>
 
         <Table.Body>
           {standings.map((standing) => (
             <Table.Row key={standing.player_id}>
-              <Table.Cell>{standing.player_name}</Table.Cell>
+              <Table.Cell color="acadianaGold.700">{standing.player_name}</Table.Cell>
               <Table.Cell>{standing.series_rank}</Table.Cell>
               <Table.Cell>{standing.wppr_points}</Table.Cell>
             </Table.Row>

@@ -29,13 +29,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <Global
-          styles={{
-            body: {
-              backgroundColor: '#f4a261',
-            },
-          }}
-        />
+        <Global />
         <HelmetProvider>
           <Provider>
             <AppLayout>{children}</AppLayout>
