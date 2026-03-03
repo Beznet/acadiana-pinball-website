@@ -5,4 +5,5 @@ export const slides = [
   { image: 'bt-players.jpg' },
   { image: 'brcade_russel_optimized.jpg' },
   { image: 'bt-winners-june.jpg' },
+  { image: 'july-tourney-group.jpg' },
 ];
