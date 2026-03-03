@@ -2,15 +2,7 @@ import { Context } from "@netlify/functions";
 
 export default async (req: Request, _context: Context) => {
   const url = new URL(req.url);
-  const year = url.searchParams.get("year");
   const regionCode = url.searchParams.get("regionCode");
-
-  if (!year) {
-    return new Response(JSON.stringify({ error: "Missing 'year' parameter" }), {
-      status: 400,
-      headers: { "Content-Type": "application/json" },
-    });
-  }
 
   if (!regionCode) {
     return new Response(
@@ -18,7 +10,7 @@ export default async (req: Request, _context: Context) => {
       {
         status: 400,
         headers: { "Content-Type": "application/json" },
-      }
+      },
     );
   }
 
@@ -32,12 +24,12 @@ export default async (req: Request, _context: Context) => {
       {
         status: 500,
         headers: { "Content-Type": "application/json" },
-      }
+      },
     );
   }
 
   try {
-    const apiUrl = `${BASE_URL}?year=${year}&region_code=${regionCode}`;
+    const apiUrl = `${BASE_URL}?year=${new Date().getFullYear()}&region_code=${regionCode}`;
     const response = await fetch(apiUrl, {
       headers: { "X-API-Key": API_KEY },
     });
@@ -61,7 +53,7 @@ export default async (req: Request, _context: Context) => {
       {
         status: 500,
         headers: { "Content-Type": "application/json" },
-      }
+      },
     );
   }
 };
