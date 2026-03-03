@@ -21,7 +21,7 @@ export const LouisianaStandings = () => {
     const fetchStandings = async () => {
       try {
         const response = await fetch(
-          '/.netlify/functions/getStandings?year=2025&regionCode=LA',
+          '/.netlify/functions/getStandings?regionCode=LA',
         );
 
         if (!response.ok) {
@@ -66,7 +66,7 @@ export const LouisianaStandings = () => {
         <Table.Caption>
           Source:{' '}
           <Link
-            href="https://www.ifpapinball.com/series/nacs/2025/standingsView.php?l=LA"
+            href={`https://www.ifpapinball.com/series/nacs/${new Date().getFullYear()}/standingsView.php?l=LA`}
             _hover={{ textDecoration: 'underline' }}
           >
             IFPA NACS Standings LA
@@ -74,8 +74,8 @@ export const LouisianaStandings = () => {
         </Table.Caption>
         <Table.Header>
           <Table.Row bg="bg.emphasized">
-            <Table.ColumnHeader fontWeight={'bold'}>Player</Table.ColumnHeader>
             <Table.ColumnHeader fontWeight={'bold'}>Rank</Table.ColumnHeader>
+            <Table.ColumnHeader fontWeight={'bold'}>Player</Table.ColumnHeader>
             <Table.ColumnHeader fontWeight={'bold'}>WPPRs</Table.ColumnHeader>
           </Table.Row>
         </Table.Header>
@@ -83,8 +83,8 @@ export const LouisianaStandings = () => {
         <Table.Body>
           {standings.map((standing) => (
             <Table.Row key={standing.player_id}>
-              <Table.Cell>{standing.player_name}</Table.Cell>
               <Table.Cell>{standing.series_rank}</Table.Cell>
+              <Table.Cell>{standing.player_name}</Table.Cell>
               <Table.Cell>{standing.wppr_points}</Table.Cell>
             </Table.Row>
           ))}
